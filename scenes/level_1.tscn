@@ -1,3 +1,40 @@
 [gd_scene format=3 uid="uid://yq1fyxaomkcq"]
 
+[ext_resource type="Texture2D" uid="uid://cu3kun5ea0v3" path="res://icon.svg" id="1_014kd"]
+[ext_resource type="Script" uid="uid://ca4yhyaci63oy" path="res://scenes/level_1.gd" id="1_bswci"]
+[ext_resource type="Script" uid="uid://bjfj12tkv28cm" path="res://falling-objects/spawner.gd" id="2_rus8k"]
+[ext_resource type="PackedScene" uid="uid://mxc71v8dd7k" path="res://falling-objects/leaves/leave1.tscn" id="3_4nkto"]
+[ext_resource type="PackedScene" uid="uid://qcvmyg6ipty7" path="res://falling-objects/chestnuts/chestnut.tscn" id="4_4nkto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5xbjy"]
+size = Vector2(1321, 441)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(1917.5, 100.5)
+
 [node name="level1" type="Node2D" unique_id=920879243]
+script = ExtResource("1_bswci")
+
+[node name="spawner" type="Node2D" parent="." unique_id=479745104 node_paths=PackedStringArray("spawnArea")]
+script = ExtResource("2_rus8k")
+leavesScene = ExtResource("3_4nkto")
+chestnutScene = ExtResource("4_4nkto")
+spawnArea = NodePath("Area2D/CollisionShape2D")
+
+[node name="Area2D" type="Area2D" parent="spawner" unique_id=1347487000]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="spawner/Area2D" unique_id=690332984]
+position = Vector2(973, 218)
+shape = SubResource("RectangleShape2D_5xbjy")
+
+[node name="floor" type="StaticBody2D" parent="." unique_id=1040037189]
+position = Vector2(0, 1080)
+
+[node name="Sprite2D" type="Sprite2D" parent="floor" unique_id=78782807]
+position = Vector2(960, -50)
+scale = Vector2(14.9765625, 0.7734375)
+texture = ExtResource("1_014kd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1759250237]
+position = Vector2(958.75, -50.25)
+shape = SubResource("RectangleShape2D_g4v7s")

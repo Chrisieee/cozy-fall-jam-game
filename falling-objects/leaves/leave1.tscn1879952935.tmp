@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://mxc71v8dd7k"]
+
+[ext_resource type="Script" uid="uid://b8iqeieud8645" path="res://falling-objects/fallingObject.gd" id="1_0uoic"]
+[ext_resource type="Texture2D" uid="uid://cu3kun5ea0v3" path="res://icon.svg" id="2_mnx2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_adan6"]
+size = Vector2(63.75, 63.75)
+
+[node name="leave" type="CharacterBody2D" unique_id=996179642]
+script = ExtResource("1_0uoic")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2048423784]
+position = Vector2(0, -32)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_mnx2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1435810977]
+position = Vector2(-0.125, -32.125)
+shape = SubResource("RectangleShape2D_adan6")

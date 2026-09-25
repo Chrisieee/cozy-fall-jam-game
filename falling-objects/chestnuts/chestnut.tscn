@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://qcvmyg6ipty7"]
+
+[ext_resource type="Script" uid="uid://b8iqeieud8645" path="res://falling-objects/fallingObject.gd" id="1_h0x6b"]
+[ext_resource type="Texture2D" uid="uid://cu3kun5ea0v3" path="res://icon.svg" id="2_cxxd7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cxxd7"]
+size = Vector2(128, 128)
+
+[node name="chestnut" type="CharacterBody2D" unique_id=2108592871]
+collision_layer = 2
+script = ExtResource("1_h0x6b")
+minDropSpeed = 100
+maxDropSpeed = 150
+objectType = "chestnut"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=149091763]
+position = Vector2(1, -64)
+texture = ExtResource("2_cxxd7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=366626176]
+position = Vector2(1, -64)
+shape = SubResource("RectangleShape2D_cxxd7")
