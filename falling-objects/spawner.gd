@@ -2,21 +2,30 @@ extends Node2D
 
 @export var leavesScene: PackedScene
 @export var chestnutScene: PackedScene
+@export var acornScene: PackedScene
+@export var beechNutsScene: PackedScene
 @export var spawnArea: CollisionShape2D
 
 var rng := RandomNumberGenerator.new()
 
-func _ready() -> void:
+func _ready():
 	rng.randomize()
 	spawnObjects(leavesScene)
 	spawnObjects(chestnutScene)
+	spawnObjects(acornScene)
+	spawnObjects(beechNutsScene)
 
 func spawnObjects(scene):
 	for i in range(5):
 		var object = scene.instantiate()
-		get_tree().current_scene.add_child.call_deferred(object)
+		var spawnPos = getRandomPosition()
+		addObject.call_deferred(object, spawnPos)
 		
 		object.global_position = getRandomPosition()
+
+func addObject(object, spawnPos):
+	get_tree().current_scene.add_child(object)
+	object.global_position = spawnPos
 
 func getRandomPosition():
 	var area = spawnArea.shape as RectangleShape2D

@@ -1,8 +1,9 @@
 extends Node2D
 
-func _ready() -> void:
-	pass 
+@onready var scoreLabel = $scoreLabel
 
+var score = 0
 
-func _process(_delta: float) -> void:
-	pass
+func _on_sorting_basket_add_score():
+	score += 1 
+	scoreLabel.text = str(score)

@@ -6,7 +6,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cxxd7"]
 size = Vector2(128, 128)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(128, 127)
+
 [node name="chestnut" type="CharacterBody2D" unique_id=2108592871]
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 script = ExtResource("1_h0x6b")
 minDropSpeed = 100
@@ -20,3 +24,9 @@ texture = ExtResource("2_cxxd7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=366626176]
 position = Vector2(1, -64)
 shape = SubResource("RectangleShape2D_cxxd7")
+
+[node name="mouseArea" type="Area2D" parent="." unique_id=374705993]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouseArea" unique_id=1331449963]
+position = Vector2(1, -64.5)
+shape = SubResource("RectangleShape2D_g4v7s")

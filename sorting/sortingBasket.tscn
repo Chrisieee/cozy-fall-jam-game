@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b8ey6lbpwly6p"]
+
+[ext_resource type="Texture2D" uid="uid://cu3kun5ea0v3" path="res://icon.svg" id="1_fqwok"]
+[ext_resource type="Script" uid="uid://c2ensvk520e2p" path="res://sorting/sorting_basket.gd" id="1_h0oo4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h0oo4"]
+size = Vector2(128, 128)
+
+[node name="sortingBasket" type="Area2D" unique_id=716298402]
+collision_mask = 2
+script = ExtResource("1_h0oo4")
+type = "chestnut"
+spriteTexture = ExtResource("1_fqwok")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=941234154]
+position = Vector2(0, -96)
+scale = Vector2(1.5, 1.5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1428591980]
+position = Vector2(0, -96)
+scale = Vector2(1.5, 1.5)
+shape = SubResource("RectangleShape2D_h0oo4")

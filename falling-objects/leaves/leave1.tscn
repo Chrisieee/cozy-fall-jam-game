@@ -6,6 +6,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_adan6"]
 size = Vector2(63.75, 63.75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0uoic"]
+size = Vector2(64, 64)
+
 [node name="leave" type="CharacterBody2D" unique_id=996179642]
 collision_layer = 2
 script = ExtResource("1_0uoic")
@@ -21,3 +24,9 @@ texture = ExtResource("2_mnx2d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1435810977]
 position = Vector2(-0.125, -32.125)
 shape = SubResource("RectangleShape2D_adan6")
+
+[node name="mouseArea" type="Area2D" parent="." unique_id=1814752970]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mouseArea" unique_id=1140584227]
+position = Vector2(0, -32)
+shape = SubResource("RectangleShape2D_0uoic")
