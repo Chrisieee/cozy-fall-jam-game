@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bferfwupn053h"]
+
+[ext_resource type="Texture2D" uid="uid://bp8xiqg1wh3ft" path="res://scenes/resources/background.png" id="1_bodal"]
+[ext_resource type="Texture2D" uid="uid://dtmgftnw6lldl" path="res://scenes/resources/tree.png" id="2_kdmts"]
+[ext_resource type="FontFile" uid="uid://bddl74uxnunyb" path="res://scenes/resources/LuckiestGuy-Regular.ttf" id="3_0auqf"]
+[ext_resource type="Texture2D" uid="uid://d1lxjq5en6pa3" path="res://scenes/resources/LogoLeaveIt.png" id="4_0auqf"]
+[ext_resource type="Script" uid="uid://dhdf867kv65jv" path="res://scenes/button.gd" id="4_kdmts"]
+
+[node name="start" type="Node2D" unique_id=311507063]
+
+[node name="background" type="Sprite2D" parent="." unique_id=586582121]
+position = Vector2(982, 1403)
+scale = Vector2(2, 2)
+texture = ExtResource("1_bodal")
+
+[node name="Tree" type="Sprite2D" parent="." unique_id=1477545228]
+position = Vector2(958, 633)
+scale = Vector2(4.313, 4.313)
+texture = ExtResource("2_kdmts")
+
+[node name="Button" type="Button" parent="." unique_id=620423368]
+offset_left = 768.0
+offset_top = 869.0
+offset_right = 1144.0
+offset_bottom = 965.0
+theme_override_fonts/font = ExtResource("3_0auqf")
+theme_override_font_sizes/font_size = 50
+text = "start"
+script = ExtResource("4_kdmts")
+
+[node name="LogoLeaveIt" type="Sprite2D" parent="." unique_id=1241407669]
+position = Vector2(951, 426)
+scale = Vector2(0.45261845, 0.45261845)
+texture = ExtResource("4_0auqf")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

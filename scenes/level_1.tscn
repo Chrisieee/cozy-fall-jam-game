@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://yq1fyxaomkcq"]
 
-[ext_resource type="Texture2D" uid="uid://cu3kun5ea0v3" path="res://icon.svg" id="1_014kd"]
 [ext_resource type="Script" uid="uid://ca4yhyaci63oy" path="res://scenes/level_1.gd" id="1_bswci"]
+[ext_resource type="Texture2D" uid="uid://bp8xiqg1wh3ft" path="res://scenes/resources/background.png" id="2_2aecg"]
 [ext_resource type="Script" uid="uid://bjfj12tkv28cm" path="res://falling-objects/spawner.gd" id="2_rus8k"]
 [ext_resource type="Texture2D" uid="uid://fuxm83k7co7x" path="res://sorting/basket-chestnut.png" id="3_2y5yt"]
 [ext_resource type="PackedScene" uid="uid://mxc71v8dd7k" path="res://falling-objects/leaves/leave1.tscn" id="3_4nkto"]
@@ -12,18 +12,27 @@
 [ext_resource type="PackedScene" uid="uid://b8ey6lbpwly6p" path="res://sorting/sortingBasket.tscn" id="6_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://3wyxu22bdigq" path="res://falling-objects/acorn/acorn.tscn" id="6_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://c1j4lo4tkhjee" path="res://falling-objects/beechNuts/beechNuts.tscn" id="7_15mv3"]
+[ext_resource type="Texture2D" uid="uid://dtmgftnw6lldl" path="res://scenes/resources/tree.png" id="12_7gny6"]
+[ext_resource type="Texture2D" uid="uid://byw27cm3161ay" path="res://scenes/resources/grass.png" id="13_7gny6"]
+[ext_resource type="FontFile" uid="uid://bddl74uxnunyb" path="res://scenes/resources/LuckiestGuy-Regular.ttf" id="14_6dial"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xbjy"]
-size = Vector2(1321, 441)
+size = Vector2(675, 420.5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
+font = ExtResource("14_6dial")
+font_size = 100
+font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(1917.5, 100.5)
 
-[sub_resource type="LabelSettings" id="LabelSettings_g4v7s"]
-font_size = 50
-
 [node name="level1" type="Node2D" unique_id=920879243]
 script = ExtResource("1_bswci")
+
+[node name="PixilFrame0" type="Sprite2D" parent="." unique_id=383628483]
+position = Vector2(962, 648)
+texture = ExtResource("2_2aecg")
 
 [node name="sortingBasket" parent="." unique_id=716298402 instance=ExtResource("6_fcfvj")]
 position = Vector2(163, 981)
@@ -54,28 +63,82 @@ spawnArea = NodePath("Area2D/CollisionShape2D")
 
 [node name="Area2D" type="Area2D" parent="spawner" unique_id=1347487000]
 
+[node name="Tree" type="Sprite2D" parent="spawner/Area2D" unique_id=1833427306]
+position = Vector2(961.99994, 481.99997)
+scale = Vector2(3.3133333, 3.3133333)
+texture = ExtResource("12_7gny6")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="spawner/Area2D" unique_id=690332984]
-position = Vector2(973, 218)
+position = Vector2(961, 331)
 shape = SubResource("RectangleShape2D_5xbjy")
+
+[node name="scoreLabel" type="Label" parent="." unique_id=910407015]
+offset_top = 2.0
+offset_right = 1921.0
+offset_bottom = 139.0
+text = "0"
+label_settings = SubResource("LabelSettings_g4v7s")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="floor" type="StaticBody2D" parent="." unique_id=1040037189]
 position = Vector2(0, 1080)
-
-[node name="Sprite2D" type="Sprite2D" parent="floor" unique_id=78782807]
-position = Vector2(960, -50)
-scale = Vector2(14.9765625, 0.7734375)
-texture = ExtResource("1_014kd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1759250237]
 position = Vector2(958.75, -50.25)
 shape = SubResource("RectangleShape2D_g4v7s")
 
-[node name="scoreLabel" type="Label" parent="." unique_id=910407015]
-offset_right = 1921.0
-offset_bottom = 97.0
-text = "0"
-label_settings = SubResource("LabelSettings_g4v7s")
-horizontal_alignment = 1
+[node name="Grass" type="Sprite2D" parent="floor" unique_id=2025490720]
+position = Vector2(74, -26)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass" unique_id=1387476339]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass" unique_id=1830333435]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass/Grass" unique_id=2033931381]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass/Grass/Grass" unique_id=1283167770]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass/Grass/Grass/Grass" unique_id=225351033]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass/Grass/Grass/Grass/Grass" unique_id=1068435136]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass/Grass/Grass/Grass/Grass/Grass" unique_id=2021105928]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass" unique_id=1738130766]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass" unique_id=447325035]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass" unique_id=1684762606]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass" unique_id=1165555620]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
+
+[node name="Grass" type="Sprite2D" parent="floor/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass/Grass" unique_id=1624614152]
+position = Vector2(150, 0)
+texture = ExtResource("13_7gny6")
 
 [connection signal="addScore" from="sortingBasket" to="." method="_on_sorting_basket_add_score"]
 [connection signal="addScore" from="sortingBasket2" to="." method="_on_sorting_basket_add_score"]

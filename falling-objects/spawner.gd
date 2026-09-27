@@ -13,7 +13,7 @@ func _ready():
 	spawnNewObjects()
 	
 	var timer = Timer.new()
-	timer.wait_time = 10.0
+	timer.wait_time = 15.0
 	timer.one_shot = false
 	timer.timeout.connect(_on_timeout)
 	add_child(timer)
