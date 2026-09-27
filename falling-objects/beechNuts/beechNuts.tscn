@@ -1,33 +1,33 @@
 [gd_scene format=3 uid="uid://c1j4lo4tkhjee"]
 
 [ext_resource type="Script" uid="uid://b8iqeieud8645" path="res://falling-objects/fallingObject.gd" id="1_eaum0"]
-[ext_resource type="Texture2D" uid="uid://cu3kun5ea0v3" path="res://icon.svg" id="2_4wi8k"]
+[ext_resource type="Texture2D" uid="uid://oohybbvqcmv6" path="res://falling-objects/beechNuts/beechnut.png" id="2_4wi8k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rpnf7"]
-size = Vector2(63.75, 63.75)
+size = Vector2(43.333332, 63.75)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oomek"]
-size = Vector2(64, 64)
+size = Vector2(43.333332, 64)
 
 [node name="beechNuts" type="CharacterBody2D" unique_id=1726671439]
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.75, 0.75)
 collision_layer = 2
 script = ExtResource("1_eaum0")
 minDropSpeed = 30
 maxDropSpeed = 50
 objectType = "beechnut"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2010269504]
-position = Vector2(0, -32)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_4wi8k")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=156653235]
-position = Vector2(-0.125, -32.125)
+position = Vector2(-1.1920929e-06, -32.125)
 shape = SubResource("RectangleShape2D_rpnf7")
 
 [node name="mouseArea" type="Area2D" parent="." unique_id=1644563795]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mouseArea" unique_id=1716731654]
-position = Vector2(0, -32)
+position = Vector2(-1.1920929e-06, -32)
 shape = SubResource("RectangleShape2D_oomek")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2010269504]
+position = Vector2(-9.536743e-07, -32)
+scale = Vector2(0.86419755, 0.8641974)
+texture = ExtResource("2_4wi8k")

@@ -10,13 +10,26 @@ var rng := RandomNumberGenerator.new()
 
 func _ready():
 	rng.randomize()
+	spawnNewObjects()
+	
+	var timer = Timer.new()
+	timer.wait_time = 10.0
+	timer.one_shot = false
+	timer.timeout.connect(_on_timeout)
+	add_child(timer)
+	timer.start()
+
+func _on_timeout():
+	spawnNewObjects()
+
+func spawnNewObjects():
 	spawnObjects(leavesScene)
 	spawnObjects(chestnutScene)
 	spawnObjects(acornScene)
 	spawnObjects(beechNutsScene)
 
 func spawnObjects(scene):
-	for i in range(5):
+	for i in range(rng.randi_range(1, 5)):
 		var object = scene.instantiate()
 		var spawnPos = getRandomPosition()
 		addObject.call_deferred(object, spawnPos)

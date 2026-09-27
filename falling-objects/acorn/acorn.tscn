@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://3wyxu22bdigq"]
 
 [ext_resource type="Script" uid="uid://b8iqeieud8645" path="res://falling-objects/fallingObject.gd" id="1_01wmf"]
-[ext_resource type="Texture2D" uid="uid://cu3kun5ea0v3" path="res://icon.svg" id="1_nseml"]
+[ext_resource type="Texture2D" uid="uid://bcwg7v7weaybf" path="res://falling-objects/acorn/acorn.png" id="2_01wmf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_01wmf"]
-size = Vector2(63.75, 63.75)
+size = Vector2(40.666664, 58.541668)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5o0nx"]
-size = Vector2(64, 64)
+size = Vector2(40, 58.666668)
 
 [node name="acorn" type="CharacterBody2D" unique_id=930470000]
 scale = Vector2(0.75, 0.75)
@@ -17,17 +17,17 @@ minDropSpeed = 50
 maxDropSpeed = 70
 objectType = "acorn"
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1391553363]
-position = Vector2(0, -32)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nseml")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=342388406]
-position = Vector2(-0.125, -32.125)
+position = Vector2(-0.33333272, -29.395834)
 shape = SubResource("RectangleShape2D_01wmf")
 
 [node name="mouseArea" type="Area2D" parent="." unique_id=769858499]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mouseArea" unique_id=403661209]
-position = Vector2(0, -32)
+position = Vector2(0, -29.333334)
 shape = SubResource("RectangleShape2D_5o0nx")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1391553363]
+position = Vector2(9.536743e-07, -32)
+scale = Vector2(0.8366014, 0.8366013)
+texture = ExtResource("2_01wmf")
