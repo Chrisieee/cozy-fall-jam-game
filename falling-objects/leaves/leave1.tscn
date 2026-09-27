@@ -10,6 +10,7 @@ size = Vector2(46, 61)
 size = Vector2(46, 61)
 
 [node name="leave" type="CharacterBody2D" unique_id=996179642]
+scale = Vector2(1.2, 1.2)
 collision_layer = 2
 script = ExtResource("1_0uoic")
 minDropSpeed = 30

@@ -48,11 +48,3 @@ func _input(event):
 			if currentlyDragging == self:
 				dragging = false
 				currentlyDragging = null
-				
-				checkPosition()
-
-func checkPosition():
-	pass
-	# check of hij colide
-	# check of het de juiste is
-	# doe iets

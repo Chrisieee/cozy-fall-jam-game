@@ -10,7 +10,7 @@ size = Vector2(43.333332, 63.75)
 size = Vector2(43.333332, 64)
 
 [node name="beechNuts" type="CharacterBody2D" unique_id=1726671439]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.9, 0.9)
 collision_layer = 2
 script = ExtResource("1_eaum0")
 minDropSpeed = 30

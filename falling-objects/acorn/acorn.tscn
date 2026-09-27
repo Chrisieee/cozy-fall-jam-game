@@ -10,7 +10,7 @@ size = Vector2(40.666664, 58.541668)
 size = Vector2(40, 58.666668)
 
 [node name="acorn" type="CharacterBody2D" unique_id=930470000]
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.95, 0.95)
 collision_layer = 2
 script = ExtResource("1_01wmf")
 minDropSpeed = 50

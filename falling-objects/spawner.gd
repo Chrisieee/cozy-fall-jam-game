@@ -20,6 +20,7 @@ func _ready():
 	timer.start()
 
 func _on_timeout():
+	AudioManager.play_sound(preload("res://scenes/sounds/gargamel10-rustling-leaves-378798.mp3"), -10)
 	spawnNewObjects()
 
 func spawnNewObjects():

@@ -1,12 +1,14 @@
 [gd_scene format=3 uid="uid://bferfwupn053h"]
 
 [ext_resource type="Texture2D" uid="uid://bp8xiqg1wh3ft" path="res://scenes/resources/background.png" id="1_bodal"]
+[ext_resource type="Script" uid="uid://ciys7vslkax0q" path="res://scenes/start.gd" id="1_y16t7"]
 [ext_resource type="Texture2D" uid="uid://dtmgftnw6lldl" path="res://scenes/resources/tree.png" id="2_kdmts"]
 [ext_resource type="FontFile" uid="uid://bddl74uxnunyb" path="res://scenes/resources/LuckiestGuy-Regular.ttf" id="3_0auqf"]
 [ext_resource type="Texture2D" uid="uid://d1lxjq5en6pa3" path="res://scenes/resources/LogoLeaveIt.png" id="4_0auqf"]
 [ext_resource type="Script" uid="uid://dhdf867kv65jv" path="res://scenes/button.gd" id="4_kdmts"]
 
 [node name="start" type="Node2D" unique_id=311507063]
+script = ExtResource("1_y16t7")
 
 [node name="background" type="Sprite2D" parent="." unique_id=586582121]
 position = Vector2(982, 1403)

@@ -17,3 +17,5 @@ func _on_body_entered(node):
 	if node.is_in_group(type):
 		node.queue_free()
 		addScore.emit()
+	else:
+		AudioManager.play_sound(preload("res://scenes/sounds/freesound_community-wrong-47985.mp3"), -15)
